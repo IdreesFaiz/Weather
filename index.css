@@ -1,0 +1,135 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 80vh;
+   background-color: #cfd1e1;
+   
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column  ;
+}
+#head{
+    margin-bottom: 30px;
+        color: #555;
+        font-family: 'Libre Baskerville', serif;
+font-family: 'Playpen Sans', cursive;
+}
+.shado{
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: calc(100% + 50px);
+    height: 300px;
+    background-color: red;
+    transform-origin: top;
+    transform: skew(45deg);
+    background: linear-gradient(180deg,rgba(0,0,0,0.1),
+    transparent,transparent);
+
+}
+
+.searchBox::before{
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 50px;
+   background:linear-gradient(#fff, #fff,#e3e3e3);
+   z-index: 1;
+   filter: blur(1px);
+}
+.searchBox::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 10px;
+    height: 50px;
+   background: #9d9d9d;;
+   z-index: 1;
+   filter: blur(1px);
+
+}
+.searchBox{
+    position: relative;
+    width: 65px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.searchBox:hover{
+    width: 300px;
+}
+.shado::before{
+   content: '';
+   position: absolute;
+   width: 50px;
+   height: 50px;
+   background-color: #cfd1e1; 
+   z-index: 1;
+}
+.searchBox input{
+    position: relative;
+    width: 100%;
+    padding-left: 20px;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.1em;
+    color: #555;
+    background: linear-gradient(#dbdae1,#a3aaba);
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1),
+     15px 15px 15px rgba(0,0,0,0.1),
+     20px 20px 20px rgba(0,0,0,0.1),
+     30px 30px 30px rgba(0,0,0,0.1),
+     inset 1px 1px 2px #fff;
+}
+.searchBox input,
+.searchBox input::placeholder{
+    color: transparent ;
+}
+.searchBox:hover input,  
+.searchBox:hover input::placeholder{
+      color: #555;
+}
+ion-icon{
+    position: absolute;
+    right: 20px;
+    color: #555;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+ 
+/* Media query for screens smaller than 768px (typical mobile devices) */
+@media screen and (max-width: 768px) {
+    .shado {
+        width: calc(60% + 15px); /* Adjust the width for smaller screens */
+        height: 150px; /* Adjust the height for smaller screens */
+        
+    }
+}    
